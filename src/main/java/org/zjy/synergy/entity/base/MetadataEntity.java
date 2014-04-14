@@ -2,10 +2,11 @@ package org.zjy.synergy.entity.base;
 
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-import org.zjy.entity.AbstractEntity;
+import org.zjy.synergy.entity.AbstractEntity;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * Created by junyan Zhang on 14-2-26.

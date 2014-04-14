@@ -9,11 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.zjy.entity.JsonResponse;
-import org.zjy.entity.base.ResponsePromptEntity;
-import org.zjy.entity.base.UserEntity;
-import org.zjy.service.base.LogService;
-import org.zjy.service.base.TemplateService;
+import org.zjy.synergy.entity.JsonResponse;
+import org.zjy.synergy.entity.base.ResponsePromptEntity;
+import org.zjy.synergy.entity.base.UserEntity;
+import org.zjy.synergy.service.base.LogService;
+import org.zjy.synergy.service.base.TemplateService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

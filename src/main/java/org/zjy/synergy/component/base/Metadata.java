@@ -5,11 +5,11 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.zjy.entity.AbstractEntity;
-import org.zjy.entity.JsonResponse;
-import org.zjy.service.base.DataService;
-import org.zjy.service.base.LogService;
-import org.zjy.service.base.MetadataService;
+import org.zjy.synergy.entity.AbstractEntity;
+import org.zjy.synergy.entity.JsonResponse;
+import org.zjy.synergy.service.base.DataService;
+import org.zjy.synergy.service.base.LogService;
+import org.zjy.synergy.service.base.MetadataService;
 
 import java.util.List;
 

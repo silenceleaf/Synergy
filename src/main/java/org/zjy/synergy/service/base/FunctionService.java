@@ -4,9 +4,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import org.zjy.entity.base.FunctionTreeNodeEntity;
-import org.zjy.entity.base.ResponseFuncTreeEntity;
+import org.zjy.synergy.entity.base.FunctionTreeNodeEntity;
+import org.zjy.synergy.entity.base.ResponseFuncTreeEntity;
 
 import java.io.File;
 import java.io.FileInputStream;

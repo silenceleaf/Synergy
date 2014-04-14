@@ -1,12 +1,9 @@
 package org.zjy.synergy.entity.base;
 
-import org.hibernate.annotations.*;
-import org.zjy.config.annotation.EntityOnly;
-import org.zjy.entity.AbstractEntity;
+import org.hibernate.annotations.Cascade;
+import org.zjy.synergy.entity.AbstractEntity;
 
 import javax.persistence.*;
-import javax.persistence.Entity;
-import javax.persistence.Table;
 import java.util.LinkedList;
 import java.util.List;
 

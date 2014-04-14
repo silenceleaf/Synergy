@@ -2,11 +2,8 @@ package org.zjy.synergy.entity.base;
 
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-import org.zjy.config.annotation.EntityOnly;
-import org.zjy.config.annotation.Language;
-import org.zjy.config.annotation.Mapping;
-import org.zjy.entity.AbstractEntity;
-import org.zjy.service.base.PropertiesService;
+import org.zjy.synergy.config.annotation.EntityOnly;
+import org.zjy.synergy.entity.AbstractEntity;
 
 import javax.persistence.*;
 

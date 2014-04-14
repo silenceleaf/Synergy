@@ -2,14 +2,15 @@ package org.zjy.synergy.component;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-import org.zjy.entity.AbstractEntity;
-import org.zjy.entity.AbstractJsonEntity;
-import org.zjy.entity.JsonResponse;
-import org.zjy.entity.KeyValueEntity;
-import org.zjy.entity.base.ResponseOperationEntity;
-import org.zjy.entity.base.TemplateFieldEntity;
-import org.zjy.service.base.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.zjy.synergy.entity.AbstractJsonEntity;
+import org.zjy.synergy.entity.JsonResponse;
+import org.zjy.synergy.entity.KeyValueEntity;
+import org.zjy.synergy.entity.base.ResponseOperationEntity;
+import org.zjy.synergy.service.base.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Enumeration;

@@ -21,33 +21,24 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.Date;
 import java.util.Map;
 
 @EnableAutoConfiguration
 @ComponentScan
-@EntityScan(basePackageClasses=City.class)
+//@PropertySource("application.properties")
+//@EntityScan(basePackages="org.zjy.synergy.entity")
 @Controller
 public class ApplicationEntrance extends WebMvcConfigurerAdapter {
-
-	@RequestMapping("/")
-	public String home(Map<String, Object> model) {
-		model.put("message", "Hello World");
-		model.put("title", "Hello Home");
-		model.put("date", new Date());
-		return "home";
-	}
-
-	@RequestMapping("/foo")
-	public String foo() {
-		throw new RuntimeException("Expected exception in controller");
-	}
 
 	public static void main(String[] args) throws Exception {
 		// Set user password to "password" for demo purposes only
@@ -55,16 +46,16 @@ public class ApplicationEntrance extends WebMvcConfigurerAdapter {
 				"security.user.password=password").run(args);
 	}
 
-	@Override
-	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/login").setViewName("login");
-	}
+//	@Override
+//	public void addViewControllers(ViewControllerRegistry registry) {
+//		registry.addViewController("/login").setViewName("login");
+//	}
 
-    @Bean
-    public InternalResourceViewResolver viewResolver() {
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("/WEB-INF/views/");
-        viewResolver.setSuffix(".jsp");
-        return viewResolver;
-    }
+//    @Bean
+//    public InternalResourceViewResolver viewResolver() {
+//        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+//        viewResolver.setPrefix("/WEB-INF/views/");
+//        viewResolver.setSuffix(".jsp");
+//        return viewResolver;
+//    }
 }

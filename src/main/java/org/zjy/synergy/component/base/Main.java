@@ -6,9 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.zjy.entity.JsonResponse;
-import org.zjy.entity.base.ResponseFuncTreeEntity;
-import org.zjy.service.base.FunctionService;
+import org.zjy.synergy.entity.JsonResponse;
+import org.zjy.synergy.entity.base.ResponseFuncTreeEntity;
+import org.zjy.synergy.service.base.FunctionService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

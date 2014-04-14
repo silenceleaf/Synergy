@@ -9,15 +9,18 @@ import org.hibernate.persister.entity.SingleTableEntityPersister;
 import org.hibernate.persister.entity.UnionSubclassEntityPersister;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.zjy.config.annotation.EntityOnly;
-import org.zjy.config.annotation.Language;
-import org.zjy.config.annotation.Mapping;
-import org.zjy.entity.AbstractJsonEntity;
-import org.zjy.entity.base.*;
+import org.zjy.synergy.config.annotation.EntityOnly;
+import org.zjy.synergy.config.annotation.Language;
+import org.zjy.synergy.config.annotation.Mapping;
+import org.zjy.synergy.entity.AbstractJsonEntity;
+import org.zjy.synergy.entity.base.*;
 
 import javax.persistence.*;
 import java.lang.reflect.Field;
-import java.util.*;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by junyan Zhang on 14-2-26.

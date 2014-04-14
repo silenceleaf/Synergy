@@ -1,7 +1,7 @@
 package org.zjy.synergy.entity.base;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import org.zjy.entity.AbstractJsonEntity;
+import org.zjy.synergy.entity.AbstractJsonEntity;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -4,9 +4,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.zjy.entity.base.OperationEntity;
-import org.zjy.entity.base.OperationGroupEntity;
-import org.zjy.entity.base.ResponseOperationEntity;
+import org.zjy.synergy.entity.base.OperationEntity;
+import org.zjy.synergy.entity.base.OperationGroupEntity;
+import org.zjy.synergy.entity.base.ResponseOperationEntity;
 
 import java.util.HashMap;
 import java.util.LinkedList;

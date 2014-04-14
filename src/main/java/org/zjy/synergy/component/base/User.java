@@ -7,11 +7,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.StandardPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.zjy.entity.AbstractEntity;
-import org.zjy.entity.AbstractJsonEntity;
-import org.zjy.entity.JsonResponse;
-import org.zjy.entity.base.*;
-import org.zjy.service.base.*;
+import org.zjy.synergy.entity.AbstractEntity;
+import org.zjy.synergy.entity.AbstractJsonEntity;
+import org.zjy.synergy.entity.JsonResponse;
+import org.zjy.synergy.entity.base.*;
+import org.zjy.synergy.service.base.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

@@ -1,7 +1,7 @@
 package org.zjy.synergy.entity.base;
 
-import org.zjy.entity.AbstractEntity;
-import org.zjy.service.base.PropertiesService;
+import org.zjy.synergy.entity.AbstractEntity;
+import org.zjy.synergy.service.base.PropertiesService;
 
 import javax.persistence.*;
 import java.util.List;

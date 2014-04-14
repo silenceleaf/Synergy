@@ -1,7 +1,7 @@
 package org.zjy.synergy.entity.base;
 
-import org.zjy.entity.AbstractJsonEntity;
-import org.zjy.service.base.LogService;
+import org.zjy.synergy.entity.AbstractJsonEntity;
+import org.zjy.synergy.service.base.LogService;
 
 /**
  * Created by junyan Zhang on 14-2-6.

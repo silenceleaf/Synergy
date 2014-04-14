@@ -1,6 +1,6 @@
 package org.zjy.synergy.config.annotation;
 
-import org.zjy.service.base.PropertiesService;
+import org.zjy.synergy.service.base.PropertiesService;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

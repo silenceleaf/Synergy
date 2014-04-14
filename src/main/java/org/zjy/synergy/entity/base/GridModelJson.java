@@ -1,7 +1,7 @@
 package org.zjy.synergy.entity.base;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import org.zjy.entity.AbstractJsonEntity;
+import org.zjy.synergy.entity.AbstractJsonEntity;
 
 /**
  * Created by junyan Zhang on 14-3-20.

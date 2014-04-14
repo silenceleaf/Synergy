@@ -4,7 +4,6 @@
     <meta name="description" content="User Management"/>
     <meta name="author" content="zjy"/>
     <meta name="copyright" content="zjy"/>
-    <link rel="shortcut icon" href="/images/NU-Logo_16*16.png" type="image"/>
     <!--<link rel="stylesheet" type="text/css" href="/extjs5/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css"/>-->
     <link rel="stylesheet" type="text/css" href="/extjs/resources/css/ext-all-neptune.css"/>
     <!--<script type="text/javascript" src="/extjs5/ext-all-debug.js"></script>-->

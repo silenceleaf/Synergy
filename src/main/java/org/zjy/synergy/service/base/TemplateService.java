@@ -4,8 +4,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.zjy.entity.AbstractJsonEntity;
-import org.zjy.entity.base.*;
+import org.zjy.synergy.entity.AbstractJsonEntity;
+import org.zjy.synergy.entity.base.*;
 
 import java.util.*;
 
