@@ -21,9 +21,12 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -34,10 +37,9 @@ import java.util.Date;
 import java.util.Map;
 
 @EnableAutoConfiguration
-@ComponentScan
-//@PropertySource("application.properties")
+@Configuration
+@ComponentScan("org.zjy.synergy")
 //@EntityScan(basePackages="org.zjy.synergy.entity")
-@Controller
 public class ApplicationEntrance extends WebMvcConfigurerAdapter {
 
 	public static void main(String[] args) throws Exception {
@@ -45,6 +47,16 @@ public class ApplicationEntrance extends WebMvcConfigurerAdapter {
 		new SpringApplicationBuilder(ApplicationEntrance.class).properties(
 				"security.user.password=password").run(args);
 	}
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("images/**").addResourceLocations("WEB-INF/images/");
+        registry.addResourceHandler("css/**").addResourceLocations("WEB-INF/css/");
+        registry.addResourceHandler("js/**").addResourceLocations("WEB-INF/js/");
+        registry.addResourceHandler("extjs/**").addResourceLocations("WEB-INF/extjs/");
+        //registry.addResourceHandler("extjs5/**").addResourceLocations("WEB-INF/extjs5/");
+        //registry.addResourceHandler("views/**").addResourceLocations("WEB-INF/views/");
+    }
 
 //	@Override
 //	public void addViewControllers(ViewControllerRegistry registry) {

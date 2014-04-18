@@ -8,10 +8,9 @@ import org.zjy.synergy.entity.AbstractJsonEntity;
  */
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class GridModelJson extends AbstractJsonEntity {
+public class TemplateDisplayJson extends AbstractJsonEntity {
 ;
     private String name;
-    private String type;
     private Integer fieldIndex;
     private String defaultValue;
     private String text;
@@ -24,14 +23,6 @@ public class GridModelJson extends AbstractJsonEntity {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public Integer getFieldIndex() {

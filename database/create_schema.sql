@@ -1,7 +1,7 @@
 drop table if exists synergy.bd_authority;
 CREATE TABLE synergy.bd_authority
 (
-  pk_authority INTEGER PRIMARY KEY NOT NULL,
+  pk_authority INTEGER PRIMARY KEY NOT NULL auto_increment,
   fk_role INTEGER NOT NULL,
   fk_function INTEGER NOT NULL,
   ts TEXT,

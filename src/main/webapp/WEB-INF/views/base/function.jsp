@@ -10,7 +10,7 @@
     <script type="text/javascript" src="/extjs/ext-all-dev.js"></script>
     <!--<script type="text/javascript" src="/extjs5/packages/ext-locale/build/ext-locale-en.js"></script>-->
     <script type="text/javascript" src="/extjs/locale/ext-lang-en.js"></script>
-    <script type="text/javascript" src="/views/util.js"></script>
+    <script type="text/javascript" src="/js/util.js"></script>
     <title>Function Management</title>
 </head>
 <body>

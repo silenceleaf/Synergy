@@ -21,7 +21,7 @@ public class PropertiesService extends Properties {
 
     public PropertiesService() {
         try {
-            this.load(new FileInputStream("src/main/webapp/WEB-INF/app.properties"));
+            this.load(new FileInputStream("src/main/resources/application.properties"));
         } catch (Exception e) {
             logger.error("Open properties file error.");
         }
@@ -29,7 +29,7 @@ public class PropertiesService extends Properties {
 
     public int getAppLanguage () {
         if (appLanguage == 0) {
-            String appLanguageConfig = this.getProperty("app.language");
+            String appLanguageConfig = this.getProperty("application.language");
             switch (appLanguageConfig) {
                 case "en":
                     appLanguage = EN;

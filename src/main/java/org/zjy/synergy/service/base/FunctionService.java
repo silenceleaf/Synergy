@@ -29,7 +29,7 @@ public class FunctionService {
     private AuthorityService authorityService;
 
     private Boolean enableFunctionDivCache = false;
-    private String divIdPrefix = "function";
+    private String divIdPrefix = "function_";
     private Map<Integer, String> functionBodyCache;
     private Map<Integer, FunctionTreeNodeEntity> funcTreeCache;
     private String webContentsRootPath;
@@ -71,7 +71,7 @@ public class FunctionService {
             } catch (NullPointerException e) {
                 logService.error("Get class path error");
             }
-            String appName = propertiesService.getProperty("app.name");
+            String appName = propertiesService.getProperty("application.name");
             webContentsRootPath = targetPath.substring(0, targetPath.lastIndexOf(appName) + appName.length() + 1);
         }
 
@@ -80,9 +80,9 @@ public class FunctionService {
         String htmlPath;
         if (functionTreeNodeEntity != null && functionTreeNodeEntity.getFile() != null) {
             if (functionTreeNodeEntity.getFile().charAt(0) == '/')
-                htmlPath = webContentsRootPath + propertiesService.getProperty("app.viewFilePath") + functionTreeNodeEntity.getFile().substring(1);
+                htmlPath = webContentsRootPath + propertiesService.getProperty("application.viewFilePath") + functionTreeNodeEntity.getFile().substring(1);
             else
-                htmlPath = webContentsRootPath + propertiesService.getProperty("app.viewFilePath") + functionTreeNodeEntity.getFile();
+                htmlPath = webContentsRootPath + propertiesService.getProperty("application.viewFilePath") + functionTreeNodeEntity.getFile();
         } else {
             logService.error("Get html path error");
             return null;

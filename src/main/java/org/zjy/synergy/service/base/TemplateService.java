@@ -33,12 +33,12 @@ public class TemplateService {
     private String retrieveTemplatesByModule = "from TemplateEntity where module in (:modules) and dr = 0";
     private String retrieveMetadataTemplateById = "from MetadataTemplateEntity where fkTemplate in (:fkTemplate) and dr = 0";
     private String retrieveTemplateFieldById = "from TemplateFieldEntity where templateEntity.pkTemplate in (:fkTemplate) and dr = 0";
+    private String retrieveMetadataDetail = "from MetadataDetailEntity where pkMetadataDetail = ?";
 
 
     public TemplateService() {
         templateCache = new LinkedHashMap<>();
     }
-
 
 
     @SuppressWarnings(value = {"unchecked"})
@@ -56,25 +56,39 @@ public class TemplateService {
         }
         Session session = sessionFactory.openSession();
         List<AbstractJsonEntity> result = new LinkedList<>();
-        List<MetadataTemplateEntity> metadataTemplateEntityList = session.createQuery(retrieveMetadataTemplateById).setParameterList("fkTemplate", templateId).list();
-        for (MetadataTemplateEntity metadataTemplateEntity : metadataTemplateEntityList) {
-            if (metadataTemplateEntity.getJsonName() != null) {
-                GridModelJson gridModelJson = new GridModelJson();
-                gridModelJson.setId(metadataTemplateEntity.getPkTemplateField());
-                gridModelJson.setName(metadataTemplateEntity.getJsonName());
-                gridModelJson.setType(metadataTemplateEntity.getType());
-                gridModelJson.setFieldIndex(metadataTemplateEntity.getFieldIndex());
-                gridModelJson.setDefaultValue(metadataTemplateEntity.getDefaultValue());
+        List<TemplateFieldEntity> templateFieldEntityList = session.createQuery(retrieveTemplateFieldById).setParameterList("fkTemplate", templateId).list();
+        for (TemplateFieldEntity templateFieldEntity : templateFieldEntityList) {
+            TemplateDisplayJson templateDisplayJson = new TemplateDisplayJson();
+            if (templateFieldEntity.getFkMetadataDetail() == null) {
+                templateDisplayJson.setId(templateFieldEntity.getPkTemplateField());
+                templateDisplayJson.setName(templateFieldEntity.getName());
+                templateDisplayJson.setFieldIndex(templateFieldEntity.getFieldIndex());
+                templateDisplayJson.setDefaultValue(templateFieldEntity.getDefaultValue());
                 if (propertiesService.getAppLanguage() == PropertiesService.EN)
-                    gridModelJson.setText(metadataTemplateEntity.getTextEn());
+                    templateDisplayJson.setText(templateFieldEntity.getTextEn());
                 else if (propertiesService.getAppLanguage() == PropertiesService.ZH)
-                    gridModelJson.setText(metadataTemplateEntity.getTextZh());
+                    templateDisplayJson.setText(templateFieldEntity.getTextZh());
                 else
-                    gridModelJson.setText(metadataTemplateEntity.getTextEn());
+                    templateDisplayJson.setText(templateFieldEntity.getTextEn());
 
-                gridModelJson.setDescription(metadataTemplateEntity.getDescription());
-                result.add(gridModelJson);
+                templateDisplayJson.setDescription(templateFieldEntity.getDescription());
+            } else {
+                MetadataDetailEntity metadataDetail = (MetadataDetailEntity) session
+                        .get(MetadataDetailEntity.class, templateFieldEntity.getFkMetadataDetail());
+                templateDisplayJson.setId(templateFieldEntity.getPkTemplateField());
+                templateDisplayJson.setName(metadataDetail.getJsonName());
+                templateDisplayJson.setFieldIndex(templateFieldEntity.getFieldIndex());
+                templateDisplayJson.setDefaultValue(templateFieldEntity.getDefaultValue());
+                if (propertiesService.getAppLanguage() == PropertiesService.EN)
+                    templateDisplayJson.setText(templateFieldEntity.getTextEn());
+                else if (propertiesService.getAppLanguage() == PropertiesService.ZH)
+                    templateDisplayJson.setText(templateFieldEntity.getTextZh());
+                else
+                    templateDisplayJson.setText(templateFieldEntity.getTextEn());
+
+                templateDisplayJson.setDescription(templateFieldEntity.getDescription());
             }
+            result.add(templateDisplayJson);
         }
         session.close();
         return result;

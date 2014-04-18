@@ -15,7 +15,7 @@ Time: 10:13
     <link rel="stylesheet" type="text/css" href="/extjs/resources/css/ext-all-neptune.css"/>
     <script type="text/javascript" src="/extjs/ext-all.js"></script>
     <script type="text/javascript" src="/extjs/locale/ext-lang-en.js"></script>
-    <script type="text/javascript" src="/views/util.js"></script>
+    <script type="text/javascript" src="/js/util.js"></script>
 
     <title>Main</title>
 </head>
